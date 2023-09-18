@@ -1,0 +1,2 @@
+@visu.command.bundler.bundle_app: VISU\Bundler\Command\BundleAppCommand(@container)
+    = command: 'bundler:archive'
