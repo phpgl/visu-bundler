@@ -1,0 +1,36 @@
+{
+    "name": "phpgl/visu-bundler",
+    "description": "A simple application bundler to create portable php applications.",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.1",
+        "phpgl/visu": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "phpstan/phpstan": "^1.8",
+        "phpgl/ide-stubs": "dev-main"
+    },
+    "autoload": {
+        "psr-4": {
+            "VISU\\Bundler\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "VISU\\Bundler\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": [
+            "ClanCats\\Container\\ComposerContainerFileLoader::generateMap"
+        ]
+    },
+    "extra": {
+        "container": {
+            "@main": "bundler.ctn"
+        }
+    }
+}
